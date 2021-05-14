@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# React-Simple Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React CRUD Application (for a dynamic UI) integrated with Cloud Firestore’s library (firebase).
 
-## Available Scripts
+## What is it for?
 
-In the project directory, you can run:
+The aim of this app is to collect and store data (documents) that will be displayed on the UI where the user can create, modify and delete them.
 
-### `yarn start`
+## Install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install the required npm packages:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm install`
 
-### `yarn test`
+Run the App
+You can run the app by typing in the Terminal the command line: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm start`
 
-### `yarn build`
+This command will start the server on which the app will be running.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Check the Result
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After the server has started (Compiled successfully!), you can view and test the app opening the browser with the url:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+http://localhost:3000/ 
 
-### `yarn eject`
+Enjoy!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Behind the scenes - App overview
+The app uses firebase library in which each learner has:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* id, first name, last name, email, score
+* we can create, retrieve, update, delete Learners from Firebase Cloud Firestore
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The app has two main routes: `/add` for the `AddLearner` component and `/learners` for the `ListLearner` component. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The root container for the app is in `src/App.js` which will contain a navbar and a `Switch` object that renders the routes matching the path. This allows us to compose routes in the app in many ways (sidebars, breadcrumbs, bootstrap tabs, etc.)
 
-## Learn More
+React state vs Redux. For this project I thought React state may be a better option as the state is applied to few components whereas Redux could benefit bigger apps where more components may need to access the state.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I needed a way to pass the "logged in" state of the user across pages, so I saved it to the LocalStorage.
+Every protected route will check the local storage for a specific key/value before allowing a user to view
+a page that is accessible only to logged-in users.
+The local storage is cleaned at logout.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Technology used for the project:
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React 16.13.1
+* Firebase 7.19.1
+* Bootstrap 4.5.2
