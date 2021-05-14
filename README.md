@@ -27,7 +27,8 @@ http://localhost:3000/
 
 Enjoy!
 
-## Behind the scenes - App overview
+Behind the scenes:
+
 The app uses firebase library in which each learner has:
 
 * id, first name, last name, email, score
