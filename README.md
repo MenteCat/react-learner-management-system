@@ -12,7 +12,7 @@ Install the required npm packages:
 
 `npm install`
 
-Run the App
+## Run the App
 You can run the app by typing in the Terminal the command line: 
 
 `npm start`
