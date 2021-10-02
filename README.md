@@ -1,6 +1,8 @@
 # React-Simple Management System
 
 This is a React CRUD Application (for a dynamic UI) integrated with Cloud Firestore’s library (firebase).
+![overview](https://user-images.githubusercontent.com/63736914/135730194-366236f4-8c94-4c33-b69b-952e20fcf5b0.png)
+
 You can visit it at: https://learner-ms.web.app
 
 ## What is it for?
